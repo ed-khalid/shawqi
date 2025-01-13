@@ -29,17 +29,20 @@ export const ProjectView = ({project, onUpdateProject}:Props)  => {
      
 
 
-    return <div className="project">
-        <div className="project-title">{project.name}</div> 
+    return <div className={"project"} >
+        <div className={"project-title " + project.category.toString().toLowerCase()}>{project.name}</div> 
         <button onClick={() => setShowNewTask(!showNewTask) } className="add-task-button" >Add Task</button>
         {showNewTask && <div className="new-task-form" >
             <label>Name:</label>
             <input className="new-task-name" onChange={(e) => setNewTaskName(e.target.value) } value={newTaskName} />
             <button onClick={onSaveTask} className="save-task-button">Save</button> 
         </div>}
-        <div className="tasks-wrapper">
-          {project.tasks.map(task => <div key={'project-' + project.id + '-task-' + task.id}>{task.name}</div>)}
-        </div>
+            <ul className="tasks-wrapper">
+          {project.tasks.map(task => 
+          <li className="project-task"  key={'project-' + project.id + '-task-' + task.id}>{task.name}</li>
+          )}
+            </ul>
+            <div className={"project-category " +  project.category.toString().toLowerCase()}>{project.category}</div>
     </div>
     
 }

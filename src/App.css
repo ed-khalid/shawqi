@@ -48,24 +48,61 @@ div#footer {
   display:flex;
  }
  div.project {
+  margin-left: 5px;
+  margin-right: 5px;
   display:flex;
   flex-direction: column;
   align-items: center;
   width: 120px;
-  height: 100px;
+  height: 300px;
   border: 1px solid white;
+  position: relative;
  }
  div.project div.project-title {
   font-size: 0.75rem;
  }
- div.tasks-wrapper {
-  overflow-y: scroll;
-  overflow-x: hidden;
-
+ ul.tasks-wrapper {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+ }
+ li.project-task {
+  font-size: 0.5rem;
+  border-bottom: 1px solid white;
+  width: 100%;
  }
  div.new-task-form {
   font-size: 0.75rem;
-
+ }
+ div.project-category {
+  padding-top: 2px;
+  padding-left: 4px;
+  position: absolute;
+  bottom: 0;
+  font-size: 0.5rem;
+  width: 96%;
+  text-align: left;
+  color: black;
+ }
+ div.project-title {
+  width: 100%;
+ }
+ div.art {
+  background: rgb(199, 199, 3);
+  color: black;
+ }
+ div.code {
+  background: rgb(105, 29, 247);
+  color: white;
+ }
+ div.diy {
+  background: rgb(243, 204, 132);
+  color: black;
+ }
+ div.video {
+  background: rgb(243, 132, 132);
+  color: black;
  }
 
  input.new-task-name {
@@ -73,7 +110,7 @@ div#footer {
 
  }
  button.add-task-button {
-  height: 30px;
+  height: 20px;
   width: 100%;
   font-size: 0.5rem;
  }
@@ -87,7 +124,7 @@ div#footer {
  div#timeline {
   border: 1px solid white;
   width: 90vw;
-  height: 400px;
+  height: 200px;
   position: relative;
   overflow-y: hidden;
  }
@@ -97,9 +134,11 @@ div#footer {
   left: 0;
  }
  div#timeline-grid {
-  margin-top: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 10px;
   display: flex;
-  height: 100%;
+  height: 40%;
  }
  div.timeline-hour {
   height: 100%;
@@ -116,8 +155,8 @@ div#footer {
   left: -3px;
 
  }
- div.timeline-hour:last-child {
-  border-right: none;
+ div.timeline-hour:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.315);
  }
 
 
