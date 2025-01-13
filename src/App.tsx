@@ -6,6 +6,7 @@ import { Project } from './models/Project'
 import { Timeline } from './models/Timeline'
 import { TimelineView } from './components/TimelineView'
 import { ProjectTask } from './models/ProjectTask'
+import { format } from 'date-fns'
 
 function App() {
 
@@ -20,9 +21,18 @@ function App() {
 
   const [projects, setProjects] = useState<Array<Project>>([])
   const [timeline, setTimeline] = useState<Timeline>({ days: []})
+  const [daqqa, setDaqqa] = useState(new Date())
+
+  setInterval(() => {
+    setDaqqa(new Date())
+  },1000)
+
+  const formatDaqqa = () => {
+    return format(daqqa, 'PPPpp')
+
+  } 
 
   const updateProject = (project:Project, task:ProjectTask) => {
-    console.log('update project')
     project.tasks.push(task)
     project.updatedAt = new Date()
     const projectsRaw = localStorage.getItem('projects') || '[]' 
@@ -61,7 +71,7 @@ function App() {
   return (
     <div className="layout" >
       <div id="header">
-        <h2>Shawqi</h2>
+        <h2>Shawqi {formatDaqqa()}</h2>
         </div>
         <div id="menu">
 

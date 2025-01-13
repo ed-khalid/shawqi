@@ -88,7 +88,36 @@ div#footer {
   border: 1px solid white;
   width: 90vw;
   height: 400px;
+  position: relative;
+  overflow-y: hidden;
+ }
+ div#timeline-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+ }
+ div#timeline-grid {
+  margin-top: 30px;
+  display: flex;
+  height: 100%;
+ }
+ div.timeline-hour {
+  height: 100%;
+  width: 50px;
+  border-right: 1px solid rgba(255, 255, 255, 0.315);
 
+  position: relative;
+ }
+ div.hour-marker {
+  position: absolute;
+  font-size: 0.5rem;
+  color: rgba(255, 255, 255, 0.315);
+  top: -10px;
+  left: -3px;
+
+ }
+ div.timeline-hour:last-child {
+  border-right: none;
  }
 
 
