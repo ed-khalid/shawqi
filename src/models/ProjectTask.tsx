@@ -4,7 +4,9 @@ export type ProjectTask = {
     name: string
     id: number
     description: string
-    status: ProjectTaskStatus
+    status: ProjectTaskStatus,
+    createdAt: Date,
+    updatedAt: Date | undefined
 }
 
 export enum ProjectTaskStatus {

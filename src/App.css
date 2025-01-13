@@ -33,7 +33,7 @@ div#header .h2 {
 div#projects-wrapper {
   grid-area: projects;
 }
-div#timeline {
+div#timeline-wrapper {
   width: 100vw;
   grid-area: timeline;
 
@@ -50,9 +50,45 @@ div#footer {
  div.project {
   display:flex;
   flex-direction: column;
-  width: 100px;
+  align-items: center;
+  width: 120px;
   height: 100px;
   border: 1px solid white;
+ }
+ div.project div.project-title {
+  font-size: 0.75rem;
+ }
+ div.tasks-wrapper {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+ }
+ div.new-task-form {
+  font-size: 0.75rem;
+
+ }
+
+ input.new-task-name {
+  width: 70%;
+
+ }
+ button.add-task-button {
+  height: 30px;
+  width: 100%;
+  font-size: 0.5rem;
+ }
+ button.save-task-button {
+  height: 30px;
+  width: 70%;
+  font-size: 0.5rem;
+ }
+
+ /* timeline */
+ div#timeline {
+  border: 1px solid white;
+  width: 90vw;
+  height: 400px;
+
  }
 
 

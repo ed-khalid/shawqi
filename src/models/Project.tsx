@@ -7,8 +7,10 @@ export type Project = {
     category:ProjectCategory
     thumbnail: string
     tasks: Array<ProjectTask>
+    createdAt: Date
+    updatedAt: Date | undefined
 }
 
 export enum ProjectCategory {
-    CODE, ART, DIY, MUSIC
+    CODE, ART, DIY, MUSIC, CAREER
 }

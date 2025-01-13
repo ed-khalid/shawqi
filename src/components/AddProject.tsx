@@ -23,7 +23,9 @@ export const AddProject = ({onSaveProject}: Props) => {
             id: -1,
             category: newProjectCategory as unknown as ProjectCategory,
             tasks: [],
-            thumbnail: ''
+            thumbnail: '',
+            createdAt: new Date(),
+            updatedAt: undefined
         }
         onSaveProject(project)
         setShowNewProject(false)
@@ -42,6 +44,7 @@ export const AddProject = ({onSaveProject}: Props) => {
                 <option value="DIY">DIY</option>
                 <option value="MUSIC">MUSIC</option>
                 <option value="VIDEO">VIDEO</option>
+                <option value="CAREER">CAREER</option>
             </select> 
             <button onClick={saveProject}>Save</button>
             </div>}
